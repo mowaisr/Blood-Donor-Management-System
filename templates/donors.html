@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Donors | BloodCare</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">BloodCare</div>
+        <a href="/" class="nav-btn">Home</a>
+    </header>
+
+    <section class="donor-section">
+
+        <h1>Find Blood Donors</h1>
+        <p>Find registered donors by their blood group.</p>
+
+        <!-- Search Form -->
+        <form method="GET" action="/donors" class="search-form">
+
+            <select name="blood_group">
+                <option value="">All Blood Groups</option>
+
+                <option value="A+" {% if selected_group == 'A+' %}selected{% endif %}>A+</option>
+                <option value="A-" {% if selected_group == 'A-' %}selected{% endif %}>A-</option>
+                <option value="B+" {% if selected_group == 'B+' %}selected{% endif %}>B+</option>
+                <option value="B-" {% if selected_group == 'B-' %}selected{% endif %}>B-</option>
+                <option value="AB+" {% if selected_group == 'AB+' %}selected{% endif %}>AB+</option>
+                <option value="AB-" {% if selected_group == 'AB-' %}selected{% endif %}>AB-</option>
+                <option value="O+" {% if selected_group == 'O+' %}selected{% endif %}>O+</option>
+                <option value="O-" {% if selected_group == 'O-' %}selected{% endif %}>O-</option>
+
+            </select>
+            <input
+                type="text"
+                name="city"
+                placeholder="Enter city"
+                value="{{ selected_city }}"
+>
+
+            <button type="submit">Search Donors</button>
+
+        </form>
+
+        <!-- Donor Cards -->
+        <div class="donor-list">
+
+            {% for donor in donors %}
+
+            <div class="donor-card">
+
+                <h3>{{ donor[1] }}</h3>
+
+                <p><strong>Age:</strong> {{ donor[2] }}</p>
+
+                <p><strong>Gender:</strong> {{ donor[3] }}</p>
+
+                <p><strong>Blood Group:</strong>
+                    <span class="blood-badge">
+                        {{ donor[4] }}
+                    </span>
+                </p>
+
+                <p><strong>Contact:</strong> {{ donor[5] }}</p>
+                 <p><strong>City:</strong> {{ donor[6] }}</p>
+            </div>
+
+            {% else %}
+
+            <p class="no-donors">
+                No donors found for this blood group.
+            </p>
+
+            {% endfor %}
+
+        </div>
+
+        <a href="/" class="back-home">Back to Home</a>
+
+    </section>
+
+</body>
+</html>

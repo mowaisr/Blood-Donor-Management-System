@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | BloodCare</title>
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <section class="donor-section">
+
+        <h1>Admin Dashboard</h1>
+        <p>Welcome to BloodCare Admin Panel!</p>
+
+        <h2>Total Donors: {{ donors|length }}</h2>
+
+        <a href="/admin-logout" class="back-home">
+            Logout
+        </a>
+
+        <div class="donor-list">
+
+            {% for donor in donors %}
+
+            <div class="donor-card">
+                <h3>{{ donor[1] }}</h3>
+                <p>Blood Group: {{ donor[4] }}</p>
+                <p>Contact: {{ donor[5] }}</p>
+                <p>City: {{ donor[6] }}</p>
+
+<div class="admin-actions">
+
+    <a href="/edit-donor/{{ donor[0] }}" class="edit-btn">
+        Edit
+    </a>
+
+    <form method="POST"
+          action="/delete-donor/{{ donor[0] }}"
+          onsubmit="return confirm('Are you sure you want to delete this donor?');">
+
+        <button type="submit" class="delete-btn">
+            Delete
+        </button>
+
+    </form>
+
+</div>
+
+            </div>
+
+            {% else %}
+
+            <p>No donors registered yet.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+</body>
+</html>

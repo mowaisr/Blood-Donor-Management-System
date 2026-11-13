@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodCare | Blood Donor Management System</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">BloodCare</div>
+
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="/donors">Find Donors</a></li>
+                <li><a href="/register">Donate Blood</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="/register" class="nav-btn">Become a Donor</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Donate Blood, <span>Save Lives</span></h1>
+
+            <p>
+                Your small act of kindness can give someone
+                another chance at life. Join our blood donor
+                community and help save lives.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="/register" class="btn primary-btn">
+                    Become a Donor
+                </a>
+
+                <a href="/donors" class="btn secondary-btn">
+                    Find Blood
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <h2>About BloodCare</h2>
+        <p>
+            BloodCare is a Blood Donor Management System
+            designed to connect blood donors with people
+            who need blood. Our mission is to make blood
+            donation easier, faster and more accessible.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: bloodcare@example.com</p>
+        <p>Phone: +91 9876543210</p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 BloodCare. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+```
