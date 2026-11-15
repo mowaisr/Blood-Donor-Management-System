@@ -107,3 +107,13 @@ def delete_donor(donor_id):
 
     conn.commit()
     conn.close()
+
+def get_donor_count():
+    conn = get_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM donors")
+    count = cursor.fetchone()[0]
+
+    conn.close()
+    return count

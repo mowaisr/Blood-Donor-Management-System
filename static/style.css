@@ -280,3 +280,245 @@ footer {
     border-radius: 5px;
     min-width: 180px;
 }
+
+/* Total Donors Section */
+.stats {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #fff5f5;
+}
+
+.stats h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.stat-card {
+    display: inline-block;
+    background: white;
+    padding: 25px 50px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+    font-size: 40px;
+    color: #dc3545;
+    margin: 0;
+}
+
+.stat-card p {
+    color: #555;
+    margin-top: 10px;
+}
+
+
+/* ============================= */
+/* Responsive Design */
+/* ============================= */
+
+/* Tablets and small laptops */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .navbar {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px 5%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Hero Section */
+    .hero {
+        min-height: auto;
+        padding: 60px 6%;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* About and Contact */
+    .about, .contact {
+        padding: 50px 6%;
+    }
+
+    /* Donor Search */
+    .search-form {
+        flex-wrap: wrap;
+    }
+
+    .search-form select,
+    .search-form input {
+        min-width: 0;
+        width: 100%;
+    }
+
+    /* Registration Form */
+    .form-container {
+        padding: 25px;
+    }
+
+    /* Donor Cards */
+    .donor-list {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+
+    /* Navbar */
+    .navbar {
+        flex-direction: column;
+        padding: 18px 15px;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .nav-btn {
+        padding: 10px 16px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 45px 20px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .btn {
+        display: block;
+        margin: 10px auto;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    /* About and Contact */
+    .about, .contact {
+        padding: 40px 20px;
+    }
+
+    .about h2, .contact h2 {
+        font-size: 26px;
+    }
+
+    .about p, .contact p {
+        font-size: 15px;
+    }
+
+    /* Registration */
+    .registration {
+        padding: 30px 15px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    /* Find Donors */
+    .donor-section {
+        padding: 35px 15px;
+    }
+
+    .donor-section h1 {
+        font-size: 28px;
+    }
+
+    .donor-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Total Donors */
+    .stats {
+        padding: 35px 15px;
+    }
+
+    .stats h2 {
+        font-size: 24px;
+    }
+
+    .stat-card {
+        width: 100%;
+        max-width: 280px;
+        padding: 22px;
+    }
+
+    .stat-card h3 {
+        font-size: 34px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 18px 12px;
+        font-size: 14px;
+    }
+}
+
+/* Professional Contact Section */
+
+.contact {
+    background: #fff1f1;
+}
+
+.contact-subtitle {
+    margin-bottom: 35px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-card {
+    background: white;
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.contact-card h3 {
+    color: #c62828;
+    margin-bottom: 15px;
+}
+
+.contact-card p {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -5,7 +5,8 @@ from database import (
     get_all_donors,
     get_donor_by_id,
     update_donor,
-    delete_donor
+    delete_donor,
+    get_donor_count
 )
 
 app = Flask(__name__)
@@ -19,7 +20,8 @@ create_table()
 # Home Page
 @app.route("/")
 def home():
-    return render_template("index.html")
+    total_donors = get_donor_count()
+    return render_template("index.html", total_donors=total_donors)
 
 
 # Registration Page
